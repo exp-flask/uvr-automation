@@ -40,6 +40,7 @@ const App = () => {
 
     const onDrop = useCallback(acceptedFiles => {
         setIsLoading(true);
+        setDownloadReady(false);
         setChecklist(defaultChecklist);
         setUploadCount(null);
         setStatus(

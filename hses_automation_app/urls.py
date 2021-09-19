@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.shortcuts import redirect
 
 urlpatterns = [
     path('user_verification/', include('user_verification.urls')),
     path('admin/', admin.site.urls),
+    path('', lambda req: redirect('user_verification/'))
 ]
