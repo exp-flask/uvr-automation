@@ -32,10 +32,9 @@ const App = () => {
     const [downloadReady, setDownloadReady] = useState(false);
     const [month, setMonth] = useState(getNextMonth());
     const [year, setYear] = useState(getYear());
-    const monthOptions = new Array(12).fill(0).map((_, i) => {
-        return new Date(`${i + 1}/1`).toLocaleDateString('default', {month: 'long'})
-    });
-    const yearOptions = [getYear() - 1, getYear(), getYear() + 1]
+    const monthOptions = [ "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December" ];
+    const yearOptions = [getYear() - 1, getYear(), getYear() + 1];
     const csrftoken = getCookie('csrftoken');
 
     const onDrop = useCallback(acceptedFiles => {
@@ -154,7 +153,7 @@ const App = () => {
                     {monthOptions.map((m, i) => 
                         <option 
                             key={i} 
-                            value={new Date(`${m} 1`).toLocaleString('default', {month: 'short'})}
+                            value={new Date(`${m} 1, 1970`).toLocaleString('default', {month: 'short'})}
                         >
                             {m}
                         </option>
