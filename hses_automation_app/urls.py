@@ -16,9 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.shortcuts import redirect
+from django.views.static import serve 
+from . import settings
 
 urlpatterns = [
     path('user_verification/', include('user_verification.urls')),
     path('admin/', admin.site.urls),
+    path('media/<path:path>', serve,{'document_root': settings.MEDIA_ROOT}), 
+    path('static/<path:path>', serve,{'document_root': settings.STATIC_ROOT}), 
     path('', lambda req: redirect('user_verification/'))
 ]

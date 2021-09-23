@@ -7,13 +7,14 @@ from zipfile import ZipFile
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse, Http404
 from django.template import loader
-from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import ensure_csrf_cookie
 
+@ensure_csrf_cookie 
 def index(request):
     context = {}
     return render(request, 'user_verification/index.html', context)
 
-@csrf_exempt
+
 def run_reports(request):
     file_dict = request.FILES
     context = {

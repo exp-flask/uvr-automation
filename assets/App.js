@@ -1,6 +1,7 @@
 import React, {useCallback, useState, useEffect} from 'react'
 import {useDropzone} from 'react-dropzone'
 import loadingGif from './images/loading.gif'
+import pageLogo from './images/OHS_HSES_logo_horizonatal.png'
 
 const App = () => {
     const defaultChecklist = {
@@ -114,9 +115,10 @@ const App = () => {
 
     return (
         <div className="m-5 font-sans">
-            <h1 className="text-3xl font-normal">User Verification Automation</h1>
+            <img src={pageLogo} alt="HSES Logo" width="600" height="50"/>
+            <hr className="border-red-500 mb-7" />
 
-            <h2 className="text-2xl font-normal mb-3">Run User Verification Reports (UVR)</h2>
+            <h2 className="text-2xl font-semibold mb-3" style={{color: '#264a64'}}>Run User Verification Reports (UVR)</h2>
             <ul className="list-disc list-inside leading-relaxed mt-0">
                 <li>Upload all 20 required UVR files to run reports ({uploadCount === null ? '-' : uploadCount}/{Object.keys(checklist).length} uploaded)</li>
                 <li>If you are unsure of which files to upload, refer to the checklist at the bottom of the page</li>
@@ -138,7 +140,7 @@ const App = () => {
             }
 
             <div className="my-5">
-                <label htmlFor="month" className="font-bold">Month: </label>
+                <label htmlFor="month" className="font-bold" style={{color: '#336a90'}}>Month: </label>
                 <select 
                     id="month" 
                     name="month" 
@@ -159,7 +161,7 @@ const App = () => {
                         </option>
                     )}
                 </select>
-                <label htmlFor="year" className="font-bold ml-2"> Year: </label>
+                <label htmlFor="year" className="font-bold ml-2" style={{color: '#336a90'}}> Year: </label>
                 <select 
                     id="year" 
                     name="year" 
@@ -175,8 +177,8 @@ const App = () => {
                 </select>
             </div>
 
-            <p className="text-xl">
-                <span className="font-bold">Status: </span>
+            <p className="text-xl" style={{color: '#757575'}}>
+                <span className="font-bold" style={{color: '#264a64'}}>Status: </span>
                 {status}
             </p>
 
@@ -196,7 +198,7 @@ const App = () => {
                 </a>
             }
             
-            <h2 className="text-2xl font-normal mb-3">
+            <h2 className="text-2xl font-semibold mb-3" style={{color: '#264a64'}}>
                 UVR Files Checklist:
                 {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
