@@ -115,7 +115,7 @@ const App = () => {
 
     return (
         <div className="m-5 font-sans">
-            <img src={pageLogo} alt="HSES Logo" width="600" height="50"/>
+            <img src={pageLogo} alt="HSES Logo"/>
             <hr className="border-red-500 mb-7" />
 
             <h2 className="text-2xl font-semibold mb-3" style={{color: '#264a64'}}>Run User Verification Reports (UVR)</h2>
