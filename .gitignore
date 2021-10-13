@@ -4,3 +4,6 @@ node_modules
  *.pyc
 
  media/user_verification_files/
+ media/.DS_Store
+ 
+ .venv/
