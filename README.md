@@ -90,7 +90,7 @@ We will setup and use uWSGI and NGINX on our production server
 ## nginx and uwsgi files already included in the repo
 - uwsgi_params
     - if this did not exist, you could get it here --> `wget https://raw.githubusercontent.com/nginx/nginx/master/conf/uwsgi_params`
-- `vi hses_automation_app_uwsgi.ini`
+- hses_automation_app_uwsgi.ini
 
     - if this did not exist, you would need to create it similarly to this template:
     ```
