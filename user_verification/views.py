@@ -1,5 +1,6 @@
 import os
 import re
+import sys
 import shutil
 import subprocess
 
@@ -63,7 +64,13 @@ def run_reports(request):
     if all(context.values()):
         month = request.POST['month']
         year = request.POST['year']
-        log = subprocess.check_output([os.path.join('scripts', 'auto_user_verif.py'), uvr_filepath, month, year])
+        python_executable = sys.executable
+        if 'uwsgi' in sys.executable:
+            with open('hses_automation_app_uwsgi.ini', 'r') as conf:
+                for line in conf.readlines():
+                    if 'home' in line:
+                        python_executable = line.replace('home', '').replace('=', '').strip()
+        log = subprocess.check_output([python_executable, os.path.join('scripts', 'auto_user_verif.py'), uvr_filepath, month, year])
         print('User Verification Log:')
         print(log.decode('utf-8'))
         shutil.make_archive(os.path.join('media', 'downloadable_resources', f'{month}_{year}_UVR_Output'), 'zip', os.path.join(uvr_filepath, 'processed_files'))
