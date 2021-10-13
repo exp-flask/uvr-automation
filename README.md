@@ -60,7 +60,6 @@ We will setup and use uWSGI and NGINX on our production server
     ```
     Update the server_name field to your EC2 address, and ensure filepaths are correct throughout file
 1. `sudo ln -s /etc/nginx/sites-available/hses_automation_app_nginx.conf /etc/nginx/sites-enabled/`
-1. `sudo /etc/init.d/nginx start`
 
 1. `sudo mkdir -p /etc/uwsgi/vassals`
 1. `sudo ln -s /home/ubuntu/uvr-automation/hses_automation_app_uwsgi.ini /etc/uwsgi/vassals/`
@@ -85,6 +84,7 @@ We will setup and use uWSGI and NGINX on our production server
     ```
 1. `sudo systemctl enable uwsgi`
 1. `sudo systemctl start uwsgi`
+1. `sudo /etc/init.d/nginx start`
 
 ## nginx and uwsgi files already included in the repo
 - uwsgi_params
