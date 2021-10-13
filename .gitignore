@@ -5,5 +5,6 @@ node_modules
 
  media/user_verification_files/
  media/.DS_Store
+ .DS_Store
  
  .venv/
