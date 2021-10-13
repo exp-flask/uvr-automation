@@ -64,7 +64,6 @@ We will setup and use uWSGI and NGINX on our production server
 
 1. `sudo mkdir -p /etc/uwsgi/vassals`
 1. `sudo ln -s /home/admin/uvr-automation/hses_automation_app_uwsgi.ini /etc/uwsgi/vassals/`
-1. `uwsgi --emperor /etc/uwsgi/vassals`
 
 1. `sudo vi /etc/systemd/system/uwsgi.service`
 
