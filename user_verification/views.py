@@ -69,7 +69,7 @@ def run_reports(request):
             with open('hses_automation_app_uwsgi.ini', 'r') as conf:
                 for line in conf.readlines():
                     if re.search(r'home\s*=', line):
-                        python_executable = line.replace('home', '', 1).replace('=', '').strip()
+                        python_executable = os.path.join(line.replace('home', '', 1).replace('=', '').strip(), 'bin', 'python')
         log = subprocess.check_output([python_executable, os.path.join('scripts', 'auto_user_verif.py'), uvr_filepath, month, year])
         print('User Verification Log:')
         print(log.decode('utf-8'))
