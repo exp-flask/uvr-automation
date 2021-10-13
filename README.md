@@ -84,7 +84,12 @@ We will setup and use uWSGI and NGINX on our production server
     ```
 1. `sudo systemctl enable uwsgi`
 1. `sudo systemctl start uwsgi`
+1. `sudo rm /etc/nginx/sites-enabled/default` (to avoid going to nginx welcome page and go to websites landing page instead)
 1. `sudo /etc/init.d/nginx start`
+    
+    you may need to stop `sudo /etc/init.d/nginx stop` and start nginx again `sudo /etc/init.d/nginx start` if it does not immediately work
+    
+That's it! You can now access the site at ec2_instance_address.com/user_verification (i.e. http://ec2-18-212-19-4.compute-1.amazonaws.com/user_verification/)
 
 ## nginx and uwsgi files already included in the repo
 - uwsgi_params
