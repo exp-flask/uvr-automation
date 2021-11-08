@@ -9,7 +9,7 @@ We will setup and use uWSGI and NGINX on our production server
 1. `sudo apt-get install git python3-venv build-essential python3-dev gcc python3-pip nginx -y`
 1. `sudo python3 -m pip install --upgrade pip`
 1. `sudo python3 -m pip install uwsgi`
-1. `git clone https://github.com/exp-flask/uvr-automation.git`
+1. `scp [...args]` or `git clone [repo]` to get source code into your EC2 instance
 
 1. `mkdir .venv`
 1. `python3 -m venv .venv/djangoenv`
